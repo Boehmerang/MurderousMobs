@@ -1,0 +1,16 @@
+name: MurderousMobs
+main: net.sqdmc.murderousmobs.MurderousMobs
+version: ${project.version}
+authors: [Murder_is_Tasty]
+depend: []
+softdepend: []
+
+commands:
+    murderousmobs:
+        description: MurderousMobs help and info
+        usage: |
+               /murderousmobs help
+    mm:
+        description: MurderousMobs help and info
+        usage: |
+               /mm help
