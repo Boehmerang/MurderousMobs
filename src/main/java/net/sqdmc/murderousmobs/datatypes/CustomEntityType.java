@@ -1,4 +1,4 @@
-package net.sqdmc.murderousmobs.utils;
+package net.sqdmc.murderousmobs.datatypes;
 
 
 import java.lang.reflect.Field;
