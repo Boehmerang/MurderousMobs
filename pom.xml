@@ -71,12 +71,30 @@
             <id>maven.sk89q.com</id>
             <url>http://maven.sk89q.com/repo/</url>
         </repository>
+        <repository>
+            <id>spigot-repo</id>
+            <url>http://repo.md-5.net/content/groups/public/</url>
+        </repository>
     </repositories>
     <dependencies>
+        <!--
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
             <version>LATEST</version>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>org.craftbukit</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.17.10</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/deps/spigot-1.7.10-SNAPSHOT-b1656.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
