@@ -5,18 +5,27 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 
-import net.minecraft.server.v1_7_R4.BiomeBase;
-import net.minecraft.server.v1_7_R4.BiomeMeta;
-import net.minecraft.server.v1_7_R4.EntityInsentient;
-import net.minecraft.server.v1_7_R4.EntityTypes;
-import net.minecraft.server.v1_7_R4.EntityZombie;
+import net.minecraft.server.v1_7_R4.*;
 
-import net.sqdmc.murderousmobs.mobs.MurderZombie;
+import net.sqdmc.murderousmobs.mobs.*;
 import org.bukkit.entity.EntityType;
 
 public enum CustomEntityType {
 
-    ZOMBIE("Zombie", 54, EntityType.ZOMBIE, EntityZombie.class, MurderZombie.class);
+    CREEPER("Creeper", 50, EntityType.CREEPER, EntityCreeper.class, MurderCreeper.class),
+    SKELETON("Skeleton", 51, EntityType.SKELETON, EntitySkeleton.class, MurderSkeleton.class),
+    SPIDER("Spider", 52, EntityType.SPIDER, EntitySpider.class, MurderSpider.class),
+    ZOMBIE("Zombie", 54, EntityType.ZOMBIE, EntityZombie.class, MurderZombie.class),
+    SLIME("Slime", 55, EntityType.SLIME, EntitySlime.class, MurderSlime.class),
+    GHAST("Ghast", 56, EntityType.GHAST, EntityGhast.class, MurderGhast.class),
+    PIGZOMBIE("PigZombie", 57, EntityType.PIG_ZOMBIE,EntityPigZombie.class, MurderPigZombie.class),
+    ENDERMAN("Enderman", 58, EntityType.ENDERMAN, EntityEnderman.class, MurderEnderman.class),
+    CAVESPIDER("CaveSpider", 59, EntityType.CAVE_SPIDER, EntityCaveSpider.class, MurderCaveSpider.class),
+    BLAZE("Blaze", 61, EntityType.BLAZE, EntityBlaze.class, MurderBlaze.class),
+    LAVASLIME("LavaSlime", 62, EntityType.MAGMA_CUBE, EntityMagmaCube.class, MurderMagmaCube.class),
+    WITHER("WitherBoss", 64, EntityType.WITHER, EntityWither.class, MurderWither.class),
+    WITCH("Witch", 66, EntityType.WITCH, EntityWitch.class, MurderWitch.class)
+    ;
 
     private String name;
     private int id;
