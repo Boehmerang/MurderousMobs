@@ -1,5 +1,6 @@
 package net.sqdmc.murderousmobs;
 
+import net.sqdmc.murderousmobs.datatypes.CustomEntityType;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.sqdmc.murderousmobs.utils.*;
 
@@ -24,10 +25,16 @@ public class MurderousMobs extends JavaPlugin {
         DEBUG("The Mobs are getting Murderous!");
 
         this.mobNames = MobList.getList();
+
+        DEBUG("Registering Entities");
+        CustomEntityType.registerEntities();
+        DEBUG("Entities Registered");
     }
 
     @Override
     public void onDisable(){
-
+        DEBUG("Un-registering Entities");
+        CustomEntityType.unregisterEntities();
+        DEBUG("Entities Unregistered.");
     }
 }
