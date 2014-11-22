@@ -1,7 +1,16 @@
 package net.sqdmc.murderousmobs.mobs;
 
 import net.minecraft.server.v1_7_R4.*;
+import net.minecraft.server.v1_7_R4.Entity;
+import net.minecraft.server.v1_7_R4.World;
+import org.bukkit.*;
+import org.bukkit.Material;
+import org.bukkit.block.*;
+import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.v1_7_R4.util.UnsafeList;
+import org.bukkit.entity.*;
+import org.bukkit.event.entity.EntityChangeBlockEvent;
+import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.lang.reflect.Field;
 
@@ -37,6 +46,27 @@ public class MurderZombie extends EntityZombie {
     @Override
     public void aD() {
         super.aD();
-        this.getAttributeInstance(GenericAttributes.e).setValue(6.0D);//default 3, change to a config setting.
+        this.getAttributeInstance(GenericAttributes.e).setValue(6.0D);//TODO: change to config value {Default 3}
+
+        Block b = null;
+        LivingEntity ent = null;
+        EntityChangeBlockEvent event = new EntityChangeBlockEvent(ent, b, Material.AIR);
+        Bukkit.getServer().getPluginManager().callEvent(event);
+    }
+
+    @Override
+    protected Entity findTarget() {
+        EntityHuman entityhuman = this.world.findNearbyVulnerablePlayer(this, 32.0D);//TODO: change to config value {Default 16}
+        Entity ent = (Entity)entityhuman;
+        if(entityhuman != null) {
+            return entityhuman;
+        }
+        return null;
+
+        //return entityhuman != null && this.p(entityhuman) ? entityhuman : null;
+    }
+
+    public Entity getTarget() {
+        return findTarget();
     }
 }
