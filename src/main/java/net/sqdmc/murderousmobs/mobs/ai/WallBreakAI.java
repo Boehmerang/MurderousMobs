@@ -44,6 +44,7 @@ public class WallBreakAI extends MmAi {
 
     @Override
     public void tick() {
+        MurderousMobs.DEBUG("tick!");
         if(zombie.getTarget() == null) {
             return;
         }else if (!zombie.canBuild()) {
@@ -61,6 +62,7 @@ public class WallBreakAI extends MmAi {
 
     public boolean blocksInPath() {
         if(zombie.getTarget() == null) {
+            MurderousMobs.DEBUG("No target?");
             return false;
         }
         BlockIterator blocksInPath = getBlocksInPath(zombie.getBukkitEntity().getLocation(), zombie.getTarget().getBukkitEntity().getLocation());
@@ -74,11 +76,13 @@ public class WallBreakAI extends MmAi {
                 case LONG_GRASS:
                 case FIRE:
                 case WATER:
-                    return false;
+                    break;
                 default:
+                    MurderousMobs.DEBUG("Blocks in the path");
                     return true;
             }
         }
+        MurderousMobs.DEBUG("No blocks in path?");
         return false;
     }
 
