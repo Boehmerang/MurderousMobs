@@ -13,7 +13,7 @@ import org.bukkit.event.entity.EntityChangeBlockEvent;
  */
 public class EntityBlockInteract {
 
-    public Boolean entityBreakBlock(LivingEntity ent, Block b) {
+    public static boolean entityBreakBlock(LivingEntity ent, Block b) {
         EntityChangeBlockEvent event = new EntityChangeBlockEvent(ent, b, Material.AIR);
         Bukkit.getServer().getPluginManager().callEvent(event);
         if(!event.isCancelled()){
@@ -23,7 +23,7 @@ public class EntityBlockInteract {
         return false;
     }
 
-    public Boolean entityPlaceBlock(LivingEntity ent, Block b, Material newMat){
+    public static boolean entityPlaceBlock(LivingEntity ent, Block b, Material newMat){
         EntityChangeBlockEvent event = new EntityChangeBlockEvent(ent, b, newMat);
         Bukkit.getServer().getPluginManager().callEvent(event);
         if (!event.isCancelled()) {
