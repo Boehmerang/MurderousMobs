@@ -37,8 +37,10 @@ spigot-1.7.10-SNAPSHOT-b1656.jar
 .idea/
 *.iml
 *.iws
+*.ipr
 
 out/
+target/
 
 
 #################
