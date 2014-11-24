@@ -101,7 +101,7 @@ public class WallBreakAI extends MmAi {
                     break;
                 default:
                     zombie.getNavigation().a(tLoc.getX(), tLoc.getY(), tLoc.getZ());
-                    return EntityBlockInteract.entityBreakBlock((LivingEntity)zombie, bip.next());
+                    return EntityBlockInteract.entityBreakBlock((LivingEntity)zombie.aL(), bip.next());
             }
 
         }
